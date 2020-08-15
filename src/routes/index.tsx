@@ -1,8 +1,8 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Repo from "../pages/Repo";
-import Profile from "../pages/Profile";
+import Repo from '../pages/Repo';
+import Profile from '../pages/Profile';
 
 const routes: React.FC = () => {
   return (
