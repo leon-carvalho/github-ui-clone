@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
 
-  margin: 25px 32px;
+  margin: 2.5rem 3.2rem;
 `;
 
 export const Line = styled.div`
@@ -16,9 +16,9 @@ export const Line = styled.div`
 `;
 
 export const GithubLogo = styled(FaGithub)`
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   flex-shrink: 0;
-  margin-top: 25px;
+  margin-top: 2.5rem;
   fill: var(--border);
 `;

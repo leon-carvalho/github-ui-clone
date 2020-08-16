@@ -7,8 +7,8 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  padding: 16px;
-  border-radius: 6px;
+  padding: 1.6rem;
+  border-radius: 0.6rem;
   border: 1px solid var(--border);
 `;
 
@@ -18,9 +18,9 @@ export const Topside = styled.div`
     align-items: center;
 
     > a {
-      font-size: 14px;
+      font-size: 1.4rem;
       font-weight: 600;
-      margin-left: 8px;
+      margin-left: 0.8rem;
       color: var(--link);
       text-decoration: none;
 
@@ -32,16 +32,16 @@ export const Topside = styled.div`
   }
 
   > p {
-    font-size: 12px;
+    font-size: 1.2rem;
     color: var(--gray);
-    margin: 8px 0 16px;
+    margin: 0.8rem 0 1.6rem;
     letter-spacing: 0.1px;
   }
 `;
 
 const iconCSS = css`
-  width: 16px;
-  height: 16px;
+  width: 1.6rem;
+  height: 1.6rem;
   flex-shrink: 0;
   fill: var(--icon);
 `;
@@ -59,19 +59,19 @@ export const Botside = styled.div`
       display: flex;
       align-items: center;
 
-      margin-right: 16px;
+      margin-right: 1.6rem;
 
       > span {
-        font-size: 12px;
-        margin-left: 5px;
+        font-size: 1.2rem;
+        margin-left: 0.5rem;
         color: var(--gray);
       }
     }
   }
 
   .language {
-    width: 12px;
-    height: 12px;
+    width: 1.2rem;
+    height: 1.2rem;
     flex-shrink: 0;
     border-radius: 50%;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, LoaderIcon } from './styles';
+import { Container } from './styles';
 
 const Loader: React.FC = () => {
   return (

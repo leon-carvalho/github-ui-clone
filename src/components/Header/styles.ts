@@ -6,26 +6,26 @@ export const Container = styled.header`
   align-items: center;
   justify-content: space-between;
 
-  padding: 11px 16px;
+  padding: 1.1rem 1.6rem;
   background-color: var(--header);
 `;
 
 export const GithubLogo = styled(FaGithub)`
-  width: 32px;
-  height: 32px;
+  width: 3.2rem;
+  height: 3.2rem;
   flex-shrink: 0;
   fill: var(--logo);
 `;
 
 export const SearchForm = styled.form`
   width: 100%;
-  padding-left: 16px;
+  padding-left: 1.6rem;
 
   input {
     outline: 0;
     width: 100%;
-    padding: 7px 12px;
-    border-radius: 6px;
+    padding: 0.7rem 1.2rem;
+    border-radius: 0.6rem;
     background-color: var(--search);
     transition: width 0.2s ease-out, color 0.2s ease-out;
 
@@ -41,24 +41,24 @@ export const Toggle = styled.button`
   place-items: center;
   place-content: center;
 
-  width: 40px;
-  height: 40px;
-  margin-left: 8px;
+  width: 4rem;
+  height: 4rem;
+  margin-left: 0.8rem;
   border-radius: 50%;
   background-color: var(--search);
   transition: 0.4s;
 `;
 
 export const NightIcon = styled(FaRegMoon)`
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   flex-shrink: 0;
   fill: var(--logo);
 `;
 
 export const DayIcon = styled(FaRegSun)`
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   flex-shrink: 0;
   fill: var(--logo);
 `;

@@ -6,8 +6,8 @@ export const Container = styled.div`
   flex-direction: column;
 
   overflow: hidden;
-  border-radius: 6px;
-  padding: 16px 20px 0 10px;
+  border-radius: 0.6rem;
+  padding: 1.6rem 2rem 0 1rem;
 
   .wrapper {
     .scale-0 {
@@ -34,11 +34,11 @@ export const Container = styled.div`
   }
 
   span {
-    font-size: 11px;
-    margin-left: 7px;
-    margin-top: -25px;
+    font-size: 1.1rem;
+    margin-left: 0.7rem;
+    margin-top: -2.5rem;
+    padding-bottom: 1.6rem;
     color: var(--link);
-    padding-bottom: 16px;
 
     align-self: flex-start;
   }

@@ -14,17 +14,17 @@ export const Flex = styled.div`
   align-items: center;
 
   > div {
-    margin-left: 24px;
+    margin-left: 2.4rem;
 
     > h1 {
-      font-size: 26px;
+      font-size: 2.6rem;
       font-weight: 600;
       line-height: 1.25;
       color: var(--gray-dark);
     }
 
     > h2 {
-      font-size: 20px;
+      font-size: 2rem;
       font-weight: 300;
       color: var(--username);
     }
@@ -36,18 +36,19 @@ export const Flex = styled.div`
 
     > div {
       margin-left: 0;
-      margin-top: 16px;
+      margin-top: 1.6rem;
     }
   }
 `;
 
 export const Avatar = styled.img`
   width: 16%;
+  min-width: 8rem;
   border-radius: 50%;
 
   @media (min-width: 768px) {
     width: 100%;
-    margin-top: -34px;
+    margin-top: -3.4rem;
   }
 `;
 
@@ -56,19 +57,19 @@ export const Row = styled.ul`
   flex-wrap: wrap;
   align-items: center;
 
-  margin: 20px 0;
+  margin: 2rem 0;
 
   > li {
     display: flex;
     align-items: center;
 
     > span {
-      font-size: 14px;
+      font-size: 1.4rem;
       color: var(--gray);
     }
 
     * {
-      margin-right: 5px;
+      margin-right: 0.5rem;
     }
   }
 `;
@@ -78,22 +79,22 @@ export const Column = styled.ul`
     display: flex;
     align-items: center;
 
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 
   li + li {
-    margin-top: 10px;
+    margin-top: 1rem;
   }
 
   span {
-    margin-left: 5px;
+    margin-left: 0.5rem;
     overflow: hidden;
   }
 `;
 
 const iconCSS = css`
-  width: 16px;
-  height: 16px;
+  width: 1.6rem;
+  height: 1.6rem;
   fill: var(--icon);
 `;
 

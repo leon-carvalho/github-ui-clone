@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { RiBookMarkLine } from 'react-icons/ri';
 
 export const Container = styled.div`
-  --verticalPadding: 24px;
-  --horizontalPadding: 16px;
+  --verticalPadding: 2.4rem;
+  --horizontalPadding: 1.6rem;
 
   overflow-x: hidden;
   padding: var(--verticalPadding) var(--horizontalPadding);
@@ -41,16 +41,16 @@ export const Repos = styled.div`
   margin-top: var(--verticalPadding);
 
   > h2 {
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: normal;
   }
 
   > div {
     display: grid;
-    grid-gap: 16px;
+    grid-gap: 1.6rem;
     grid-template-columns: 1fr;
 
-    margin-top: 8px;
+    margin-top: 0.8rem;
 
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
@@ -60,15 +60,15 @@ export const Repos = styled.div`
 `;
 
 export const CalendarHeading = styled.span`
-  font-size: 16px;
-  margin: 36px 0 9px;
+  font-size: 1.6rem;
+  margin: 3.6rem 0 0.9rem;
   display: inline-flex;
 `;
 
 export const RepoIcon = styled(RiBookMarkLine)`
-  width: 16px;
-  height: 16px;
-  margin-right: 4px;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-right: 0.4rem;
 `;
 
 export const Tab = styled.div`
@@ -78,20 +78,20 @@ export const Tab = styled.div`
     display: flex;
     align-items: center;
 
-    padding: 14px 16px;
+    padding: 1.4rem 1.6rem;
     width: min-content;
     border-bottom: 2px solid var(--orange);
 
     .label {
-      padding: 0 7px;
-      font-size: 14px;
+      padding: 0 0.7rem;
+      font-size: 1.4rem;
       font-weight: 600;
     }
 
     .number {
-      font-size: 12px;
-      padding: 2px 6px;
-      border-radius: 24px;
+      font-size: 1.2rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2.4rem;
       background-color: var(--ticker);
     }
   }

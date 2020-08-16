@@ -4,8 +4,8 @@ import { AiOutlineFork } from 'react-icons/ai';
 import { FaGithub } from 'react-icons/fa';
 
 const iconCSS = css`
-  width: 16px;
-  height: 16px;
+  width: 1.6rem;
+  height: 1.6rem;
   flex-shrink: 0;
   color: var(--icon);
 `;
@@ -14,10 +14,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding: 16px;
+  padding: 1.6rem;
 
   > p {
-    font-size: 16px;
+    font-size: 1.6rem;
   }
 `;
 
@@ -27,8 +27,8 @@ export const Breadcrumb = styled.div`
   white-space: nowrap;
   align-items: center;
 
-  font-size: 18px;
-  margin-bottom: 16px;
+  font-size: 1.8rem;
+  margin-bottom: 1.6rem;
 
   > a {
     color: var(--link);
@@ -40,7 +40,7 @@ export const Breadcrumb = styled.div`
     }
 
     &.username {
-      margin-left: 8px;
+      margin-left: 0.8rem;
     }
 
     &.reponame {
@@ -48,7 +48,7 @@ export const Breadcrumb = styled.div`
     }
   }
   > span {
-    padding: 0 5px;
+    padding: 0 0.5rem;
   }
 `;
 
@@ -60,16 +60,16 @@ export const Stats = styled.ul`
   display: flex;
   align-items: center;
 
-  margin-top: 16px;
+  margin-top: 1.6rem;
 
   > li {
     display: flex;
     align-items: center;
 
-    margin-right: 9px;
+    margin-right: 0.9rem;
 
     > * {
-      margin-right: 7px;
+      margin-right: 0.7rem;
       color: var(--gray);
     }
   }
@@ -85,10 +85,10 @@ export const ForkIcon = styled(AiOutlineFork)`
 
 export const LinkButton = styled.a`
   text-decoration: none;
-  margin-top: 24px;
+  margin-top: 2.4rem;
   background: var(--gray-dark);
-  padding: 12px 17px;
-  border-radius: 24px;
+  padding: 1.2rem 10.7rem;
+  border-radius: 2.4rem;
   width: max-content;
   display: flex;
   align-items: center;
@@ -97,7 +97,7 @@ export const LinkButton = styled.a`
   }
   > svg {
     fill: var(--primary);
-    margin-right: 10px;
+    margin-right: 1rem;
   }
 `;
 

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-import Loader from '../../components/Loader';
-
 import {
   Container,
   Breadcrumb,
@@ -16,14 +14,14 @@ import {
 
 import { IAPIRepo } from '../../@types';
 
-interface IRepoData {
+interface IData {
   repo?: IAPIRepo;
   error?: string;
 }
 
 const Repo: React.FC = () => {
   const { username, reponame } = useParams();
-  const [data, setData] = useState<IRepoData>();
+  const [data, setData] = useState<IData>();
 
   useEffect(() => {
     fetch(`https://api.github.com/repos/${username}/${reponame}`).then(
@@ -42,7 +40,7 @@ const Repo: React.FC = () => {
   }
 
   if (!data?.repo) {
-    return <Loader />;
+    return <h1>Loading...</h1>;
   }
 
   return (

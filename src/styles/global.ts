@@ -30,6 +30,7 @@ export default createGlobalStyle`
   }
 
   :root {
+    /* css colors vars */
     ${props => {
       const { theme } = props;
       let append = '';
@@ -38,5 +39,11 @@ export default createGlobalStyle`
       });
       return append;
     }}
+
+    font-size: 62.5%;
+
+    /* @media(max-width: 768px) {
+      font-size: 60%;
+    } */
   }
 `;
