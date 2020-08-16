@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import ProfileData from '../../components/ProfileData';
 import RepoCard from '../../components/RepoCard';
 import RandomCalendar from '../../components/RandomCalendar';
+
+import { IAPIUser, IAPIRepo } from '../../@types';
 
 import {
   Container,
@@ -15,12 +18,54 @@ import {
   Tab,
 } from './styles';
 
+interface IProfileData {
+  user?: IAPIUser;
+  repos?: IAPIRepo[];
+  error?: string;
+}
+
 const Profile: React.FC = () => {
+  const { username = 'leon-carvalho' } = useParams();
+  const [data, setData] = useState<IProfileData>();
+
+  useEffect(() => {
+    Promise.all([
+      fetch(`https://api.github.com/users/${username}`),
+      fetch(`https://api.github.com/users/${username}/repos`),
+    ]).then(async responses => {
+      const [userResponse, reposResponse] = responses;
+
+      if (userResponse.status === 404) {
+        setData({ error: 'User not found!' });
+        return;
+      }
+
+      const user = await userResponse.json();
+      const repos = await reposResponse.json();
+
+      const shuffledRepos = repos.sort(() => 0.5 - Math.random());
+      const slicedRepos = shuffledRepos.slice(0, 6); // 6 repos
+
+      setData({
+        user,
+        repos: slicedRepos,
+      });
+    });
+  }, [username]);
+
+  if (data?.error) {
+    return <h1>{data.error}</h1>;
+  }
+
+  if (!data?.user || !data?.repos) {
+    return <h1>Loading...</h1>;
+  }
+
   const TabContent: () => JSX.Element = () => (
     <div className="content">
       <RepoIcon />
       <span className="label">Repositories</span>
-      <span className="number">31</span>
+      <span className="number">{data.user?.public_repos}</span>
     </div>
   );
 
@@ -31,21 +76,22 @@ const Profile: React.FC = () => {
           <span className="offset" />
           <TabContent />
         </div>
+
         <span className="line" />
       </Tab>
 
       <Main>
         <LeftSide>
           <ProfileData
-            username="leon-carvalho"
-            name="Leonardo Carvalho"
-            avatarUrl="https://avatars2.githubusercontent.com/u/62032328?v=4"
-            followers={23}
-            following={23}
-            company="Freelancer"
-            location="Goiás, Brasil"
-            email="leon-carvalho@profissional.com.br"
-            blog="linkedin.com/in/leonardo-dev/"
+            username={data.user.login}
+            name={data.user.name}
+            avatarUrl={data.user.avatar_url}
+            followers={data.user.followers}
+            following={data.user.following}
+            company={data.user.company}
+            location={data.user.location}
+            email={data.user.email}
+            blog={data.user.blog}
           />
         </LeftSide>
 
@@ -56,26 +102,27 @@ const Profile: React.FC = () => {
           </Tab>
 
           <Repos>
-            <h2>Radom repos</h2>
+            <h2>Random repos</h2>
 
             <div>
-              {[1, 2, 3, 4, 5, 6].map(n => (
+              {data.repos.map(item => (
                 <RepoCard
-                  key={n}
-                  username="leon-carvalho"
-                  reponame="github-explorer"
-                  description="🧭 Explore GitHub repositories issues. Built with React.js and TypeScript as a challenge of Rocketseat's bootcamp."
-                  language={n % 3 === 0 ? 'JavaScript' : 'TypeScript'}
-                  stars={4}
-                  forks={1}
+                  key={item.name}
+                  username={item.owner.login}
+                  reponame={item.name}
+                  description={item.description}
+                  language={item.language}
+                  stars={item.stargazers_count}
+                  forks={item.forks}
                 />
               ))}
             </div>
           </Repos>
 
           <CalendarHeading>
-            Random Calendar (do not represent actual data)
+            Random calendar (do not represent actual data)
           </CalendarHeading>
+
           <RandomCalendar />
         </RightSide>
       </Main>
