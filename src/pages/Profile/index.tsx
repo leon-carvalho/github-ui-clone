@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import Loader from '../../components/Loader';
 import ProfileData from '../../components/ProfileData';
 import RepoCard from '../../components/RepoCard';
 import RandomCalendar from '../../components/RandomCalendar';
@@ -58,7 +59,7 @@ const Profile: React.FC = () => {
   }
 
   if (!data?.user || !data?.repos) {
-    return <h1>Loading...</h1>;
+    return <Loader />;
   }
 
   const TabContent: () => JSX.Element = () => (

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
-import { Link } from 'react-router-dom';
+import Loader from '../../components/Loader';
+
 import {
   Container,
   Breadcrumb,
@@ -12,44 +14,69 @@ import {
   GithubIcon,
 } from './styles';
 
+import { IAPIRepo } from '../../@types';
+
+interface IRepoData {
+  repo?: IAPIRepo;
+  error?: string;
+}
+
 const Repo: React.FC = () => {
+  const { username, reponame } = useParams();
+  const [data, setData] = useState<IRepoData>();
+
+  useEffect(() => {
+    fetch(`https://api.github.com/repos/${username}/${reponame}`).then(
+      async response => {
+        setData(
+          response.status === 404
+            ? { error: 'Repository not found!' }
+            : { repo: await response.json() },
+        );
+      },
+    );
+  }, [reponame, username]);
+
+  if (data?.error) {
+    return <h1>{data.error}</h1>;
+  }
+
+  if (!data?.repo) {
+    return <Loader />;
+  }
+
   return (
     <Container>
       <Breadcrumb>
         <RepoIcon />
-        <Link className="username" to="/leon-carvalho">
-          leon-carvalho
+
+        <Link className="username" to={`/${username}`}>
+          {username}
         </Link>
 
         <span>/</span>
 
-        <Link className="reponame" to="/leon-carvalho/github-explorer">
-          github-explorer
+        <Link className="reponame" to={`/${username}/${reponame}`}>
+          {reponame}
         </Link>
       </Breadcrumb>
 
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam aut
-        quo ab doloremque mollitia expedita iusto consequatur dolores vel
-        tempora esse, necessitatibus aliquam vitae, sequi saepe accusantium odit
-        earum rerum!
-      </p>
+      <p>{data.repo.description}</p>
 
       <Stats>
         <li>
           <StarIcon />
-          <strong>8</strong>
+          <b>{data.repo.stargazers_count}</b>
           <span>stars</span>
         </li>
-
         <li>
           <ForkIcon />
-          <strong>0</strong>
+          <b>{data.repo.forks}</b>
           <span>forks</span>
         </li>
       </Stats>
 
-      <LinkButton href="https://github.com/leon-carvalho/github-explorer">
+      <LinkButton href={data.repo.html_url}>
         <GithubIcon />
         <span>View on GitHub</span>
       </LinkButton>

@@ -1,18 +1,37 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Container, GithubLogo, SearchForm } from './styles';
+import { ThemeName } from '../../styles/themes';
 
-type handleSubmitTypes = (event: React.FormEvent) => void;
+import {
+  Container,
+  GithubLogo,
+  SearchForm,
+  Toggle,
+  NightIcon,
+  DayIcon,
+} from './styles';
 
-const Header: React.FC = () => {
+type toggleThemeType = () => void;
+type handleSubmitType = (event: React.FormEvent) => void;
+
+interface IHeaderProps {
+  themeName: ThemeName;
+  setThemeName: (newName: ThemeName) => void;
+}
+
+const Header: React.FC<IHeaderProps> = ({ themeName, setThemeName }) => {
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit: handleSubmitTypes = event => {
+  const handleSubmit: handleSubmitType = event => {
     event.preventDefault();
 
     navigate(`/${search.toLowerCase().trim()}`);
+  };
+
+  const toggleTheme: toggleThemeType = () => {
+    setThemeName(themeName === 'light' ? 'dark' : 'light');
   };
 
   return (
@@ -27,6 +46,10 @@ const Header: React.FC = () => {
           placeholder="Enter Username or Repo..."
         />
       </SearchForm>
+
+      <Toggle onClick={toggleTheme}>
+        {themeName === 'light' ? <DayIcon /> : <NightIcon />}
+      </Toggle>
     </Container>
   );
 };
