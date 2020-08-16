@@ -1,44 +1,89 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="" rel="noopener">
+  <img width=400px  src="https://miro.medium.com/max/1200/1*dDNpLKu_oTLzStsDTnkJ-g.png" alt="GitHub logo"></a>
+</p>
 
-## Available Scripts
+<h3 align="center">GitHub UI Clone. Built with ReactJS | TypeScript | Styled Components</h3>
 
-In the project directory, you can run:
+<div align="center">
 
-### `yarn start`
+[![GitHub Issues](https://img.shields.io/github/issues/leon-carvalho/github-ui-clone.svg)](https://github.com/leon-carvalho/github-ui-clone/issues)
+[![Repo Languages](https://img.shields.io/github/languages/count/leon-carvalho/github-ui-clone?color=%2304D361.svg)](https://img.shields.io/github/languages/count/leon-carvalho/github-ui-clone)
+[![GitHub Repo Size](https://img.shields.io/github/repo-size/leon-carvalho/github-ui-clone.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+</div>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+---
 
-### `yarn test`
+## 📝 Table of Contents
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Authors](#authors)
+- [License](#license)
+- [Acknowledgments](#acknowledgement)
 
-### `yarn build`
+## About <a name = "about"></a>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Responsive GitHub Profile Page UI Clone with dark mode. Built with React.js and TypeScript.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Based on Guilherme Rodz tutorial: https://www.youtube.com/watch?v=iLEbGQXsg3k (PT-BR)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Online demo <a name = "deployment"></a>
 
-### `yarn eject`
+<a href="https://github-ui-clone.vercel.app/">
+  <img src="https://img.shields.io/badge/demo-try%20online-green" />
+</a>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Getting Started <a name = "getting_started"></a>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Prerequisites
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+What things you need to install the software and how to install them.
 
-## Learn More
+- [Git](https://git-scm.com/downloads) to clone repository
+- [NodeJS](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/pt-BR/docs/install) or NPM as package manager
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Running
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```shell
+# open your terminal/cmd and clone this repository
+
+$ git clone https://github.com/leon-carvalho/github-ui-clone.git
+
+# access folder github-ui-clone
+
+$ cd github-ui-clone
+
+# install dependencies using your favorite package manager
+
+$  yarn
+# or with NPM usign npm install
+$ npm install
+
+# run app typing
+
+$ yarn start
+#or with NPM
+$ npm run start
+
+# The app should open on "http://localhost:3000" 🎉🎉🎉
+```
+
+## Authors <a name = "authors"></a>
+
+- [@leon-carvalho](https://github.com/leon-carvalho)
+- Feel free to send me feedbacks on [Linkedin](https://www.linkedin.com/in/leonardo-dev/)
+
+## License
+
+This project is under [MIT LICENSE](./LICENSE).
+
+## Acknowledgements <a name = "acknowledgement"></a>
+
+- [RocketSeat Team](https://rocketseat.com.br/)
+- [Guilherme Rodz](https://github.com/guilhermerodz)
