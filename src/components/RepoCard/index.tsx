@@ -13,8 +13,8 @@ import {
 interface IRepoCardProps {
   username: string;
   reponame: string;
-  description: string;
-  language: 'JavaScript' | 'TypeScript';
+  description?: string;
+  language?: string;
   stars: number;
   forks: number;
 }
